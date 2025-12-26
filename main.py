@@ -59,6 +59,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             numero = query.value(0)
             self.comboBoxProcedimentoSelecionado.addItem(numero)
 
+        #Continuar a partir daqui
+
         
 
 
