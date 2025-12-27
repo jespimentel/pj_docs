@@ -47,7 +47,7 @@ def criar_banco():
             conn.close()
 
 
-def gerar_resumo(caminho_arquivo):
+def gerar_relatorio(caminho_arquivo):
     return f"Título gerado por IA a partir de {caminho_arquivo}", f"Resumo gerado por IA a partir de {caminho_arquivo}"
 
 from docx import Document
@@ -71,7 +71,7 @@ def exportar_relatorio(lista_dados):
 
         # 2. Construção da hierarquia no documento
         for procedimento, documentos in agrupados.items():
-            doc.add_heading(f"Procedimento: {procedimento}", level=1)
+            doc.add_heading(f"Autos/expediente: {procedimento}", level=1)
             doc.add_paragraph("")  
             
             for doc_info in documentos:
@@ -89,12 +89,12 @@ def exportar_relatorio(lista_dados):
 
                 # --- TÍTULO DO DOCUMENTO ---
                 p_titulo = doc.add_paragraph()
-                p_titulo.add_run('Título: ').bold = True
+                p_titulo.add_run('Documento: ').bold = True
                 p_titulo.add_run(doc_info['titulo'])
                 
                 # --- RESUMO ---
                 p_resumo = doc.add_paragraph()
-                p_resumo.add_run('Resumo: ').bold = True
+                p_resumo.add_run('Teor: ').bold = True
                 p_resumo.add_run(doc_info['resumo'])
                 
                 # Espaço entre documentos do mesmo procedimento

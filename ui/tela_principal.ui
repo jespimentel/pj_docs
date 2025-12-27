@@ -89,6 +89,19 @@
         </item>
        </layout>
       </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>171</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Procedimento:</string>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="widget" native="true">
       <property name="geometry">
@@ -138,11 +151,17 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>360</x>
+        <x>350</x>
         <y>540</y>
-        <width>81</width>
+        <width>111</width>
         <height>20</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="text">
        <string>Pimentel - 2025</string>
@@ -151,9 +170,9 @@
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>710</x>
+        <x>690</x>
         <y>0</y>
-        <width>51</width>
+        <width>71</width>
         <height>20</height>
        </rect>
       </property>
@@ -187,12 +206,12 @@
         <rect>
          <x>20</x>
          <y>10</y>
-         <width>131</width>
+         <width>141</width>
          <height>16</height>
         </rect>
        </property>
        <property name="text">
-        <string>Selecione o procedimento</string>
+        <string>Selecione o procedimento:</string>
        </property>
       </widget>
       <widget class="QWidget" name="layoutWidget">

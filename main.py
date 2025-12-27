@@ -1,17 +1,18 @@
 import sys
 import os
+
 from datetime import datetime
 
 from PySide6.QtWidgets import (QApplication, QMainWindow, QMessageBox, 
-                             QHeaderView, QDialog, QVBoxLayout, 
-                             QLineEdit, QPushButton, QLabel, 
-                             QFormLayout, QFileDialog)
+                             QHeaderView, QDialog, QFileDialog)
 from PySide6.QtSql import QSqlDatabase, QSqlTableModel, QSqlQuery 
+
 from ui.tela_principal import Ui_MainWindow
 from ui.tela_cadastro import Ui_Dialog
-from utils import gerar_resumo, exportar_relatorio 
 
-# 1. Nova classe para a Janela de Cadastro
+from utils import gerar_relatorio, exportar_relatorio 
+
+# Classe da Janela de Cadastro de Procedimento
 class DialogCadastroProcedimento(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -26,6 +27,7 @@ class DialogCadastroProcedimento(QDialog, Ui_Dialog):
         descricao = self.lineEdit_2.text()
         return numero, descricao
 
+# Classe da Janela Principal
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -74,7 +76,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         # Conexão do Botão de Exportar Relatório
         self.pushButtonExportarRelatorio.clicked.connect(self.preparar_relatorio)
-
 
     def abrir_janela_cadastro(self):
         # 2. Instancia e exibe a janela de diálogo
@@ -152,7 +153,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, "Aviso", "Nenhum arquivo selecionado.")
             return
 
-        titulo, resumo = gerar_resumo(caminho_arquivo)
+        titulo, resumo = gerar_relatorio(caminho_arquivo)
 
         self.lineEditAssunto.setText(titulo)
         self.textEditResumo.setPlainText(resumo)
