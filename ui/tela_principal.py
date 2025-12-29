@@ -137,11 +137,6 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_6.addWidget(self.comboBoxProcedimentoSelecionado)
 
-        self.pushButton_3 = QPushButton(self.layoutWidget1)
-        self.pushButton_3.setObjectName(u"pushButton_3")
-
-        self.horizontalLayout_6.addWidget(self.pushButton_3)
-
         self.widget_4 = QWidget(self.tab_1)
         self.widget_4.setObjectName(u"widget_4")
         self.widget_4.setGeometry(QRect(40, 140, 721, 421))
@@ -181,7 +176,6 @@ class Ui_MainWindow(object):
         self.label_4.setText(QCoreApplication.translate("MainWindow", u"PJDocs", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab), QCoreApplication.translate("MainWindow", u"Cadastro", None))
         self.label_9.setText(QCoreApplication.translate("MainWindow", u"Selecione o procedimento:", None))
-        self.pushButton_3.setText(QCoreApplication.translate("MainWindow", u"Filtrar", None))
         self.pushButtonExportarRelatorio.setText(QCoreApplication.translate("MainWindow", u"Exportar Relat\u00f3rio", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_1), QCoreApplication.translate("MainWindow", u"Relat\u00f3rio", None))
     # retranslateUi
