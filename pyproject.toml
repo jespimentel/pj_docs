@@ -5,6 +5,8 @@ description = "Gestão com IA de documentos incorporados a procedimentos da Prom
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "litellm>=1.80.11",
+    "pypdf2>=3.0.1",
     "pyside6>=6.10.1",
     "python-docx>=1.2.0",
     "python-dotenv>=1.2.1",

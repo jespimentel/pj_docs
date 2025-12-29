@@ -10,7 +10,7 @@ from PySide6.QtSql import QSqlDatabase, QSqlTableModel, QSqlQuery
 from ui.tela_principal import Ui_MainWindow
 from ui.tela_cadastro import Ui_Dialog
 
-from utils import gerar_relatorio, exportar_relatorio 
+from utils import gerar_titulo_e_resumo, exportar_relatorio 
 
 # Classe da Janela de Cadastro de Procedimento
 class DialogCadastroProcedimento(QDialog, Ui_Dialog):
@@ -153,7 +153,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, "Aviso", "Nenhum arquivo selecionado.")
             return
 
-        titulo, resumo = gerar_relatorio(caminho_arquivo)
+        titulo, resumo = gerar_titulo_e_resumo(caminho_arquivo)
 
         self.lineEditAssunto.setText(titulo)
         self.textEditResumo.setPlainText(resumo)
@@ -165,7 +165,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         data_criacao = datetime.now().strftime("%Y-%m-%d")
 
         if not titulo or not resumo:
-            QMessageBox.warning(self, "Aviso", "Título e Resumo são obrigatórios.")
+            QMessageBox.warning(self, "Aviso", "Assunto e Resumo são obrigatórios.")
             return
 
         query = QSqlQuery(self.db)
